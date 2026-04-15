@@ -5,8 +5,8 @@ __pycache__/
 
 # C extensions
 *.so
+<<<<<<< HEAD
 .idea
-# Distribution / packaging
 .Python
 build/
 develop-eggs/
