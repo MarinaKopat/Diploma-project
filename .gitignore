@@ -5,6 +5,7 @@ __pycache__/
 *.so
 <<<<<<< HEAD
 .idea
+allure-results/
 .Python
 build/
 develop-eggs/
