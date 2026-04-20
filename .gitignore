@@ -5,6 +5,7 @@ __pycache__/
 *.so
 <<<<<<< HEAD
 .idea
+target/
 allure-results/
 .Python
 build/
