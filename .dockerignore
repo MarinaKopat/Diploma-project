@@ -1,0 +1,7 @@
+.venv
+__pycache__
+allure-results
+data/*.json
+.env
+.git
+.pytest_cache

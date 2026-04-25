@@ -1,0 +1,20 @@
+[MASTER]
+# Поможет Pylint находить ваши модули в подпапках
+init-hook='import sys; sys.path.append(".")'
+
+[MESSAGES CONTROL]
+# Отключаем самые назойливые проверки, которые не критичны для тестов
+disable=
+    missing-module-docstring,
+    missing-class-docstring,
+    missing-function-docstring,
+    too-few-public-methods,
+    invalid-name,
+    import-error,          # Если линтер в CI не видит установленные пакеты
+    wrong-import-order     # Если не хочется вручную сортировать импорты
+    disable=C0114,C0115,C0116,C0301
+
+[REPORTS]
+# Убираем лишнюю статистику в выводе
+reports=no
+
