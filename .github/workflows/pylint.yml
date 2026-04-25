@@ -12,7 +12,7 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Set up Python ${{ matrix.python-version }}
-        uses: actions/setup-python@v4 # Рекомендуется v4 или v5
+        uses: actions/setup-python@v4
         with:
           python-version: ${{ matrix.python-version }}
 
@@ -20,14 +20,13 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install pylint
-          # Устанавливаем зависимости, чтобы pylint не ругался на отсутствие импортов
+          
           [ -f requirements.txt ] && pip install -r requirements.txt || true
 
       - name: Analysing the code with pylint
         run: |
-          # Указываем Python, где искать ваши модули
+          
           export PYTHONPATH=$PYTHONPATH:$(pwd)
           
-          # Запускаем проверку только для ваших папок. 
-          # --fail-under=2.0 позволит проверке быть "зеленой", даже если код не идеален.
+          
           pylint pages/ tests/ --fail-under=2.0
