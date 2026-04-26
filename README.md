@@ -1,4 +1,3 @@
-markdown 
 ![Pylint](https://github.com/MarinaKopat/Diploma-project)
 Проект по автоматизации тестирования Task Management System
 
