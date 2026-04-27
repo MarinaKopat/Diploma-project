@@ -1,7 +1,6 @@
 import pytest
 import allure
 import os
-import shutil
 from dotenv import load_dotenv
 from playwright.sync_api import Browser
 from pages.admin_page import AdminPage
