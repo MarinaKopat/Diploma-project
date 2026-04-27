@@ -12,5 +12,3 @@ def test_async_cards_loading(page):
 
     with allure.step("Проверка: карточки появились в списке"):
         expect(cards_page.cards_items).not_to_have_count(0)
-
-        cards_page.make_screenshot("Result_Screen")

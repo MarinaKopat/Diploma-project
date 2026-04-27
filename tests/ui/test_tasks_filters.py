@@ -31,5 +31,3 @@ def test_filter_tasks_by_status_and_priority(auth_page, test_config, ):
 
             expect(status_cell).to_have_text(target_status, ignore_case=True)
             expect(priority_cell).to_have_text(target_priority, ignore_case=True)
-
-    tasks_page.make_screenshot("Tasks_Filters_Success")

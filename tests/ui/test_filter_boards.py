@@ -23,5 +23,3 @@ def test_filter_only_public_boards(admin_page_auth, test_config):
             public_status_cell = rows.nth(i).locator("td").nth(2)
 
             expect(public_status_cell).to_have_text("Да")
-
-    boards_page.make_screenshot("Public_Boards_Filtered")

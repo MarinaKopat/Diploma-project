@@ -44,5 +44,3 @@ def test_create_board_min_length(admin_page_auth, test_config, short_name, expec
         val_msg = page.locator(board_page.TITLE_INPUT).evaluate("el => el.validationMessage")
 
         assert expected_len in val_msg, f"Цифра {expected_len} не найдена в ошибке: {val_msg}"
-
-        board_page.make_screenshot(f"error_len_{expected_len}")

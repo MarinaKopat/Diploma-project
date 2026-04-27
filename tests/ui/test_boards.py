@@ -10,4 +10,3 @@ def test_boards_elements_simplified(boards_page):
     with allure.step("Проверка наличия досок в таблице"):
         rows = boards_page.get_boards_rows_locator()
         expect(rows).not_to_have_count(0, timeout=10000)
-    boards_page.make_screenshot("Diana_Boards_View")

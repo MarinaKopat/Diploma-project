@@ -23,5 +23,3 @@ def test_create_board_by_admin(admin_page_auth, test_config):
 
     with allure.step("Проверка заголовка созданной доски"):
         expect(page.locator(boards_page.BOARD_TITLE_H1)).to_contain_text(board_title[:15])
-
-    boards_page.make_screenshot("created_board_final")

@@ -19,7 +19,6 @@ class TestSubscription:
             expect(subscription_page.success_message).to_have_text(
                 "Промокод применён: Скидка 15% для для всех тарифов"
             )
-            subscription_page.make_screenshot("Promo_activation")
 
     @allure.story("Позитивный сценарий")
     @allure.title("Проверка спеццены 199$ в корзине после промокода BASIC199")
@@ -42,8 +41,6 @@ class TestSubscription:
             with allure.step("Проверка изменения итоговой цены на кнопке"):
                 expect(subscription_page.checkout_button).to_contain_text("1 911₷")
 
-                subscription_page.make_screenshot("Promo_updates_final_price")
-
     @allure.story("Негативный сценарий")
     @allure.title("Ошибка при вводе невалидного промокода")
     def test_promo_activation_error(self, page):
@@ -55,5 +52,3 @@ class TestSubscription:
         with allure.step("Проверка появления сообщения об ошибке"):
             expect(subscription_page.error_message).to_be_visible()
             expect(subscription_page.error_message).to_contain_text("Промокод истек")
-
-            subscription_page.make_screenshot("Promo_activation_error")

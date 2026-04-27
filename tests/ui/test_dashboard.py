@@ -20,5 +20,3 @@ def test_dashboard_statistics(auth_page, test_config):
         expect(dashboard.create_board_btn).to_be_visible()
 
         expect(dashboard.username_label).to_have_text("diana")
-
-    dashboard.make_screenshot("Dashboard_Verification")

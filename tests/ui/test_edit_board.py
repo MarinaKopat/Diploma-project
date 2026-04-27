@@ -20,4 +20,3 @@ def test_admin_edits_first_available_board(admin_page_auth, test_config):
 
     with allure.step("Проверка обновления заголовка"):
         expect(page.locator(boards_page.BOARD_TITLE_H1)).to_contain_text(new_title[:15])
-        boards_page.make_screenshot("Final_Edit_Result")

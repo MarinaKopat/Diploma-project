@@ -14,7 +14,6 @@ class TestAdminAccess:
 
         with allure.step("Проверка: заголовок админки отображается"):
             expect(admin_page_auth.header).to_be_visible(timeout=10000)
-            admin_page_auth.make_screenshot("Admin_Access_Success")
 
     @allure.title("Запрет доступа для обычного пользователя")
     def test_non_admin_denied(self, auth_page, test_config):
@@ -26,4 +25,3 @@ class TestAdminAccess:
 
         with allure.step("Проверка: заголовок админки НЕ виден"):
             expect(admin_page.header).not_to_be_visible()
-            admin_page.make_screenshot("Non_Admin_Denied_Result")

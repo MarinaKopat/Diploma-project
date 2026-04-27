@@ -17,5 +17,3 @@ def test_tasks_list_visibility(auth_page, test_config):
         rows = tasks_page.get_tasks_rows_locator()
 
         expect(rows).not_to_have_count(0, timeout=10000)
-
-    tasks_page.make_screenshot("Tasks_Final_View")

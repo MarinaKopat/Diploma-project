@@ -21,8 +21,6 @@ class TestRegistration:
         with allure.step("Проверка наличия кнопки создания доски на дашборде"):
             expect(register_page.page.locator('button[data-qa="dashboard-create-board-button"]')).to_be_visible()
 
-        register_page.make_screenshot("registration_success_final")
-
     @allure.title("Проверка валидации некорректного Email")
     def test_registration_invalid_email(self, register_page, test_config):
         register_page.open(f"{test_config['base_url']}/register")
@@ -41,5 +39,3 @@ class TestRegistration:
             assert "@" in error_msg or "at" in error_msg.lower()
 
         register_page.verify_url(f"{test_config['base_url']}/register")
-
-        register_page.make_screenshot("invalid_email_validation")
