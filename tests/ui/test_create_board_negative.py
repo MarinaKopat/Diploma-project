@@ -21,8 +21,6 @@ def test_create_board_empty_name(admin_page_auth, test_config):
         assert any(word in val_msg.lower() for word in ["заполните", "fill out"]), \
             f"Неожиданный текст ошибки: {val_msg}"
 
-        board_page.make_screenshot("empty_name_error")
-
 
 @allure.title("Проверка валидации минимальной длины")
 @pytest.mark.parametrize("short_name, expected_len", [
