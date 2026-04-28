@@ -11,7 +11,8 @@ def test_create_board_empty_name(admin_page_auth, test_config):
     board_page = BoardsPage(page)
     base_url = test_config["base_url"]
 
-    board_page.open(f"{base_url}/dashboard")
+    board_page.open_dashboard(base_url)
+
     board_page.open_create_modal()
     board_page.submit()
 

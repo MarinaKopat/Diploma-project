@@ -1,5 +1,4 @@
 import pytest
-import allure
 import os
 from dotenv import load_dotenv
 from playwright.sync_api import Browser
@@ -87,25 +86,6 @@ def admin_page_auth(browser: Browser, admin_auth_state):
     page = context.new_page()
     yield AdminPage(page)
     context.close()
-
-
-@pytest.hookimpl(tryfirst=True, hookwrapper=True)
-def pytest_runtest_makereport(item, call):
-    outcome = yield
-    report = outcome.get_result()
-    if report.when == 'call' and report.failed:
-        page = None
-        if 'page' in item.funcargs:
-            page = item.funcargs.get('page')
-        elif 'admin_page_auth' in item.funcargs:
-            page = item.funcargs.get('admin_page_auth').page
-
-        if page:
-            allure.attach(
-                page.screenshot(),
-                name="failure_screenshot",
-                attachment_type=allure.attachment_type.PNG
-            )
 
 
 @pytest.fixture

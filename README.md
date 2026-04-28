@@ -8,7 +8,7 @@
 Язык: Python 3.10+
 Фреймворк: Pytest
 Инструмент автоматизации: Playwright 
-Отчетность: Allure Framework
+Отчетность: Allure
 Архитектура: Page Object Model (POM) + Fluent API Client
 
 Быстрый запуск
@@ -37,7 +37,6 @@ ADMIN_EMAIL=admin@example.com
 ADMIN_PASSWORD=admin123
 USER_EMAIL=diana@example.com
 USER_PASSWORD=password123
-BASE_URL=http://docker.internal
 
 
 **3. Запуск тестов**

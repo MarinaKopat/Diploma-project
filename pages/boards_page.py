@@ -74,3 +74,8 @@ class BoardsPage(BasePage):
     def submit(self):
         with allure.step("Нажать кнопку создания"):
             self.click(self.SUBMIT_BTN)
+
+    def open_dashboard(self, base_url):
+        self.open(f"{base_url}/dashboard")
+
+
